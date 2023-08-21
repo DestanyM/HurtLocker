@@ -42,7 +42,7 @@ public class Reader {
                 String value = keyValue[1];
 
                 if (key.equalsIgnoreCase("name")) {
-                    name = findCorrectSpelling(value); // Correct the name here
+                    name = findCorrectSpelling(value);
                 } else if (key.equalsIgnoreCase("price")) {
                     price = value;
                 }
@@ -56,8 +56,7 @@ public class Reader {
     }
 
         private static String findCorrectSpelling(String word) {
-            // Add your regex patterns here to find correct spellings for various words
-            // For example: "Cookies|c00Kies|Co0kies"
+
             if (word.matches("(?i)CoOkieS|Co0kieS|COokIes")) {
                 return "Cookies";
             } else if (word.matches("(?i)Milk|MiLK")) {
@@ -72,7 +71,6 @@ public class Reader {
                 return "price";
             }
 
-            // If no pattern matches, return the original word
             return word;
         }
 
